@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    
+    <style>
+        /* Основной стиль для страницы */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4A90E2, #9013FE);
+            color: #333;
+        }
+
+        /* Основные стили формы */
+        form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Стиль заголовка формы */
+        h1 {
+            color: #4A90E2;
+            margin: 0 0 20px;
+        }
+        
+        /* Стили для контейнеров полей */
+        div {
+            margin-bottom: 20px;
+        }
+
+        /* Стили для лейблов */
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #4A90E2;
+        }
+
+        /* Стили для полей ввода */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        /* Анимация фокуса на полях ввода */
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #4A90E2;
+            box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+        }
+
+        /* Стили для кнопки */
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4A90E2;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        /* Анимация на кнопке при наведении */
+        button:hover {
+            background-color: #357ABD;
+            transform: scale(1.05);
+        }
+
+        /* Анимация при нажатии */
+        button:active {
+            background-color: #285A8E;
+            transform: scale(1);
+        }
+
+        /* Стиль для ошибки */
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/login" method="post">
+        <h1>Введите ваши данные</h1>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <button type="submit">Login</button>
+        </div>
+        <div class="error-message">
+            <span th:if="${param.error}">Invalid username or password.</span>
+        </div>
+    </form>
+</body>
+</html>

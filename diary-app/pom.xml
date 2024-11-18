@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>kirill.diary</groupId>
+  <artifactId>diary-app</artifactId>
+  <packaging>jar</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>diary-app Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+	  
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>19</maven.compiler.source>
+    <maven.compiler.target>19</maven.compiler.target>
+    <start-class>kirill.app.diary.DiaryApp</start-class>
+    <java.version>19</java.version>
+  </properties>
+  
+  <dependencies>
+	  <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-web</artifactId>
+	    <version>3.3.5</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter</artifactId>
+	    <version>3.3.5</version>
+	</dependency>
+	
+
+	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-data-jpa</artifactId>
+	    <version>3.3.5</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-security</artifactId>
+	    <version>3.3.5</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+	    <version>3.3.5</version>
+	</dependency>
+	
+
+	
+		
+	<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+	<dependency>
+	    <groupId>org.postgresql</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>42.7.4</version>
+	</dependency>
+
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+	  	<plugins>
+	        <plugin>
+	            <groupId>org.springframework.boot</groupId>
+	            <artifactId>spring-boot-maven-plugin</artifactId>
+	            <version>3.3.5</version>
+	            <configuration>
+					
+            		<mainClass>kirill.app.diary.DiaryApp</mainClass>
+            		<layout>JAR</layout>
+        		</configuration>
+        		<executions>
+			    <execution>
+			        <goals>
+			            <goal>repackage</goal>
+			        </goals>
+			    </execution>
+			</executions>
+	        </plugin>
+    	</plugins>
+    <finalName>diary-app</finalName>
+  </build>
+</project>
