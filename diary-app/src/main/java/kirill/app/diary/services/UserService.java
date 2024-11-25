@@ -18,10 +18,14 @@ import kirill.app.diary.repositories.UserRepository;
 @Service
 public class UserService implements UserDetailsService{
 	
-	@Autowired
 	private UserRepository userRepository;
 	
 	private PasswordEncoder passwordEncoder;
+	
+	@Autowired
+	public UserService (UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
 	
 	public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;

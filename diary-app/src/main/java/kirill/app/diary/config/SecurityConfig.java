@@ -23,8 +23,13 @@ import kirill.app.diary.services.UserService;
 public class SecurityConfig{
 
 	
-	@Autowired
+	
     private UserService userService;
+	
+	@Autowired
+	public SecurityConfig(UserService userService) {
+		this.userService = userService;
+	}
 	
 	@Bean
     public PasswordEncoder passwordEncoder() {
@@ -33,7 +38,7 @@ public class SecurityConfig{
 	
 	@Bean
 	public UserDetailsService userDetailsService() {
-		return new UserService();
+		return userService;
 		
 	}
 	

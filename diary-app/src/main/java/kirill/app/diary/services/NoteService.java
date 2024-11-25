@@ -14,12 +14,17 @@ import kirill.app.diary.repositories.UserRepository;
 @Service
 public class NoteService {
 
-	@Autowired
+
     private NoteRepository noteRepository;
 
-    @Autowired
     private UserRepository userRepository;
 
+    
+    @Autowired
+    public NoteService(NoteRepository noteRepository, UserRepository userRepository) {
+    	this.noteRepository = noteRepository;
+    	this.userRepository = userRepository;
+    }
     
     public Note createNoteForUser(Long userId, Note note) {
         Optional<UserDiary> user = userRepository.findById(userId);
