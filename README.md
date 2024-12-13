@@ -38,7 +38,7 @@ spring.security.user.name=admin
 spring.security.user.password=admin_password
 ```
 
-3. Запуск приложения
+3. Запуск приложения  
 Соберите и запустите приложение:
 
   ```bash
